@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .table-dark {
+            background-color: #2c3e50 !important;
+        }
+        .btn-secondary {
+            background-color: #636e72;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+       
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            window.location.href = "index 2.html";
+        }
+    </script>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Exam Results Slip 🎓</h2>
+            <div class="text-end">
+                <p class="mb-0"><strong>Matric No:</strong> <span id="displayMatric"></span></p>
+                <p class="mb-0"><strong>Name:</strong> <span id="displayName"></span></p>
+            </div>
+        </div>
+        
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark text-white">
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>CSC415</td><td>Introduction to Programming</td><td>A-</td></tr>
+                <tr><td>ICT500</td><td>Database Management Systems</td><td>A</td></tr>
+                <tr><td>IMS560</td><td>Advance Database</td><td>B+</td></tr>
+                <tr><td>ICM572</td><td>Gamification</td><td>A</td></tr>
+                <tr><td>TMC451</td><td>Mandarin</td><td>A</td></tr>
+                <tr><td>LCC</td><td>English</td><td>B</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="alert alert-info d-inline-block mt-3">
+            <h5 class="mb-0">Current GPA: <strong>3.70</strong></h5>
+        </div>
+
+        <div class="mt-4">
+            <a href="dashboard.html" class="btn btn-secondary">⬅️ Return to Dashboard</a>
+        </div>
+    </div>
+
+    <script>
+       
+        document.getElementById('displayMatric').innerText = localStorage.getItem('matric_no');
+        document.getElementById('displayName').innerText = localStorage.getItem('name');
+    </script>
+
+</body>
+</html>
